@@ -1,0 +1,12 @@
+<h3 class="mb-3">Mój stanowisko w strukturze firmy</h3>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <ol class="list-group list-group-numbered">
+      <li class="list-group-item" *ngFor="let c of chain; let i = index">
+        <div class="fw-bold">{{ c }}</div>
+        <div class="text-muted small" *ngIf="i < chain.length - 1">↓</div>
+      </li>
+    </ol>
+  </div>
+</div>

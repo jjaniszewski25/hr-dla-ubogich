@@ -1,0 +1,37 @@
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h3 class="mb-0">Mój profil</h3>
+  <button class="btn btn-primary btn-sm" (click)="save()">Zapisz zmiany</button>
+</div>
+
+<div *ngIf="saved" class="alert alert-success">Zapisano ✅</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div class="mb-2">
+      <label class="form-label">Imię i nazwisko</label>
+      <input class="form-control" [(ngModel)]="model.name" name="name" />
+    </div>
+
+    <div class="row g-2">
+      <div class="col-12 col-md-4">
+        <label class="form-label">Wiek</label>
+        <input class="form-control" type="number" [(ngModel)]="model.age" name="age" />
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label class="form-label">Płeć</label>
+        <select class="form-select" [(ngModel)]="model.gender" name="gender">
+          <option value="">-</option>
+          <option value="M">M</option>
+          <option value="K">K</option>
+          <option value="Inna">Inna</option>
+        </select>
+      </div>
+
+      <div class="col-12 col-md-4">
+        <label class="form-label">Stanowisko</label>
+        <input class="form-control" [(ngModel)]="model.position" name="position" />
+      </div>
+    </div>
+  </div>
+</div>

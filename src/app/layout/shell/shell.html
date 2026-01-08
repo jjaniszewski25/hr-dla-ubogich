@@ -1,0 +1,76 @@
+<div class="page-enter">
+  <nav class="navbar navbar-dark bg-dark px-3">
+    <a class="navbar-brand fw-bold d-flex align-items-center gap-2" routerLink="/stronaGlowna">
+      <img src="assets/logo.png" alt="Logo" class="logo" />
+      HR dla Ubogich
+    </a>
+
+    <button class="btn btn-outline-light btn-sm" (click)="logout()">Wyloguj</button>
+  </nav>
+
+  <div class="container-fluid py-3">
+    <div class="row g-3">
+      <div class="col-12 col-lg-2">
+        <div class="list-group shadow-sm">
+          <a class="list-group-item list-group-item-action" routerLink="/stronaGlowna" routerLinkActive="active">Aktualności</a>
+          <a class="list-group-item list-group-item-action" routerLink="/dodajNowyPost" routerLinkActive="active">Dodaj nowy post</a>
+          <a class="list-group-item list-group-item-action" routerLink="/profil" routerLinkActive="active">Mój profil</a>
+          <a class="list-group-item list-group-item-action" routerLink="/korpoSzczury" routerLinkActive="active">Struktura firmy</a>
+          <a class="list-group-item list-group-item-action" routerLink="/mapaBiura" routerLinkActive="active">Mapa biura</a>
+        </div>
+        <div class="card shadow-sm mt-3">
+  <div class="card-body">
+    <div class="fw-bold mb-2 text-center">Wesprzyj</div>
+
+    <div class="d-grid gap-2">
+      <a class="btn btn-outline-primary btn-sm" href="https://www.wosp.org.pl/" target="_blank" rel="noopener">
+        WOŚP
+      </a>
+      <a class="btn btn-outline-primary btn-sm" href="https://www.unicef.org/" target="_blank" rel="noopener">
+        UNICEF
+      </a>
+      <a class="btn btn-outline-primary btn-sm" href="https://krewniacy.pl/" target="_blank" rel="noopener">
+        Krewniacy
+      </a>
+      <a class="btn btn-outline-primary btn-sm" href="https://www.domydziecka.org/" target="_blank" rel="noopener">
+        Domy Dziecka 
+      </a>
+    </div>
+  </div>
+</div>
+
+      </div>
+      
+
+      <div class="col-12 col-lg-7">
+        <router-outlet></router-outlet>
+      </div>
+
+      <div class="col-12 col-lg-3">
+  <app-chat-sidebar></app-chat-sidebar>
+
+  <div class="card shadow-sm mt-3">
+    <div class="card-header fw-bold text-center">Urlop</div>
+
+    <div class="list-group list-group-flush">
+      <a class="list-group-item list-group-item-action" href="https://www.skimu.cz/pl/" target="_blank" rel="noopener">
+        Mala Upa
+      </a>
+      <a class="list-group-item list-group-item-action" href="https://www.szczyrkowski.pl/" target="_blank" rel="noopener">
+        Szczyrk
+      </a>
+      <a class="list-group-item list-group-item-action" href="https://bieszczad.ski/" target="_blank" rel="noopener">
+        Bieszczady
+      </a>
+      <a class="list-group-item list-group-item-action" href="https://popradskepleso.pekyho.sk/" target="_blank" rel="noopener">
+        Popradské Pleso
+      </a>
+    </div>
+  </div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<img src="assets/rat.png" alt="Running rat" class="running-rat" />

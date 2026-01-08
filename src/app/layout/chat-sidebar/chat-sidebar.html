@@ -1,0 +1,14 @@
+<div class="card shadow-sm">
+  <div class="card-header fw-bold text-center">Czat</div>
+
+  <div class="list-group list-group-flush">
+    <a
+      *ngFor="let p of people"
+      class="list-group-item list-group-item-action"
+      [routerLink]="['/chat', p.id]"
+    >
+      {{ p.name }}
+    </a>
+  </div>
+</div>
+

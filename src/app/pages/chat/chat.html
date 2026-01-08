@@ -1,0 +1,23 @@
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h3 class="mb-0">Chat: {{ chatId }}</h3>
+  <a class="btn btn-outline-secondary btn-sm" routerLink="/stronaGlowna">Wróć</a>
+</div>
+
+<div class="card shadow-sm mb-3">
+  <div #scrollBox class="card-body chat-box">
+    <div *ngFor="let m of messages" class="mb-2 d-flex" [class.justify-content-end]="m.from === 'me'">
+      <div class="bubble" [class.me]="m.from === 'me'">
+        {{ m.text }}
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div class="d-flex gap-2">
+      <input class="form-control" placeholder="Message..." [(ngModel)]="input" name="input" />
+      <button class="btn btn-primary" (click)="send()">Send</button>
+    </div>
+  </div>
+</div>

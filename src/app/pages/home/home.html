@@ -1,0 +1,63 @@
+<div class="d-flex align-items-center justify-content-between mb-3">
+  <h3 class="mb-0">Aktualności</h3>
+  <a class="btn btn-primary btn-sm" routerLink="/dodajNowyPost">Dodaj nowy post</a>
+</div>
+
+<div class="card shadow-sm">
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-striped table-hover align-middle mb-0">
+        <thead>
+          <tr>
+            <th style="width: 180px;">Data</th>
+            <th style="width: 220px;">Tytuł</th>
+            <th>Treść (skrót)</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr
+            *ngFor="let p of allPosts"
+            class="post-row"
+            (click)="open(p)"
+            role="button"
+            tabindex="0"
+          >
+            <td class="text-muted small">{{ p.createdAt | date:'yyyy-MM-dd HH:mm' }}</td>
+            <td class="fw-semibold">{{ p.title }}</td>
+            <td class="text-truncate" style="max-width: 520px;">
+              {{ p.content }}
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL (Bootstrap-like, bez JS) -->
+<div *ngIf="selected" class="modal-backdrop-custom" (click)="close()"></div>
+
+<div *ngIf="selected" class="modal-custom" (click)="$event.stopPropagation()">
+  <div class="modal-custom-dialog">
+    <div class="modal-custom-content shadow">
+      <div class="modal-custom-header">
+        <div>
+          <div class="text-muted small">{{ selected.createdAt | date:'yyyy-MM-dd HH:mm' }}</div>
+          <h5 class="mb-0">{{ selected.title }}</h5>
+        </div>
+        <button class="btn-close" aria-label="Close" (click)="close()"></button>
+      </div>
+
+      <div class="modal-custom-body">
+        <p class="mb-0" style="white-space: pre-wrap;">{{ selected.content }}</p>
+      </div>
+
+      <div class="modal-custom-footer">
+        <button class="btn btn-secondary btn-sm" (click)="close()">Zamknij</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
