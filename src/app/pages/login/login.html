@@ -14,11 +14,12 @@
             <input class="form-control" type="password" placeholder="Hasło" [(ngModel)]="pass" name="pass" />
           </div>
 
-          <div class="d-flex justify-content-between gap-2">
-            <button class="btn btn-outline-secondary btn-sm" (click)="forgot()">Przypomnij</button>
-            <button class="btn btn-primary btn-sm" (click)="doLogin()">Zaloguj</button>
-            <button class="btn btn-outline-primary btn-sm" (click)="register()">Rejestracja</button>
-          </div>
+              <div class="d-flex justify-content-between gap-2">
+                <a class="btn btn-outline-secondary btn-sm" routerLink="/forgot-password">Przypomnij</a>
+                <button class="btn btn-primary btn-sm" (click)="doLogin()">Zaloguj</button>
+                <a class="btn btn-outline-primary btn-sm" routerLink="/register">Rejestracja</a>
+              </div>
+
         </div>
       </div>
     </div>
